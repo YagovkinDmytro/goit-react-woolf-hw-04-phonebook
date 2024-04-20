@@ -1,7 +1,7 @@
 const FilterContacts = ({ stateFilter, handleChange }) => {
   return (
     <div className="search-container">
-      <label htmlFor="filtrName" className="search-lable">
+      <label htmlFor="filter" className="search-lable">
         Find contacts by name
       </label>
       <input

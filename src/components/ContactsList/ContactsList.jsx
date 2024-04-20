@@ -6,7 +6,7 @@ const ContactsList = ({ contactsArr, handleDelete }) => {
           {name}: {number}
           <button
             className="contact-button delete"
-            type="submit"
+            type="button"
             onClick={() => handleDelete(id)}
           >
             Delete
