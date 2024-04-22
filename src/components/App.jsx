@@ -45,7 +45,6 @@ export const App = () => {
 
   function getLocalStorage() {
     const localData = JSON.parse(localStorage.getItem('contacts'));
-    console.log(localData);
     return localData && localData.length > 0 ? localData : [];
   }
 
