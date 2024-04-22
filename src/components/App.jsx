@@ -11,7 +11,7 @@ import './FilterContacts/filterContacts.css';
 import './ContactsList/contactsList.css';
 
 export const App = () => {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(getLocalStorage());
 
   const [filter, setFilter] = useState('');
 
@@ -43,12 +43,11 @@ export const App = () => {
     setContacts(prev => prev.filter(elem => elem.id !== id));
   };
 
-  useEffect(() => {
+  function getLocalStorage() {
     const localData = JSON.parse(localStorage.getItem('contacts'));
-    if (localData && localData.length > 0) {
-      setContacts(() => localData);
-    }
-  }, []);
+    console.log(localData);
+    return localData && localData.length > 0 ? localData : [];
+  }
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
